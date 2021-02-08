@@ -1,14 +1,20 @@
 <p align="center">
-  <a href="https://dark-triangle.now.sh/"><img src="https://avatars2.githubusercontent.com/u/49670561" width="400"/></a>
-  <br/>
-  <b>Claimable</b>
-  <br/>
-  <br/>
+  <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/81/helicopter_1f681.png" />
 </p>
+<p align="center">
+|
+<br/>
+|
+<br/>
+|
+<br/>
+  <b>Airdrops</b> && <b>POAPs</b>
+</p>
+<br/>
 
-> 🤑 If you use Ethereum DeFi you might have money waiting you don't know about!
+> 🚁 Claimable aggregates all known Ethereum airdrops and POAPs on one page.
 
-> 🚁 Claimable aggregates all known airdrops and POAPs on one page.
+> 🤑 If you use DeFi you might have money waiting you don't know about!
 
 <br/>
 
