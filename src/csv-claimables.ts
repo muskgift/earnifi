@@ -51,7 +51,7 @@ export const csvClaimables: AirDrops = {
     tokenNamed: "tokens",
 
     imgSrc: "/images/csv-claimables/furucombo.png",
-    claimUrl: "https://furucombo.app/",
+    claimUrl: "https://furucombo.app/combo",
   },
   // https://twitter.com/harris_s0n/status/1358725157582303234?s=20
   // stakeDAO: {
