@@ -76,6 +76,17 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      <header className={styles.header}>
+        Want a notification when you have new money to claim?{" "}
+        <a
+          href="https://f0294d0e.sibforms.com/serve/MUIEALIgXjIm8XIXXOOoKbW5v87Rao_7T3FOViN4QRx5sD4OfrM0gBAXW8VSAX4WFJnUoCwN-1afQuZEKwxfRJzIp1PW0rxbEfU0hKJogE2YEmHqut6uoPJqSe-0NRfo35CVPzgSjX6H772gQtyuYYqo34nDsPIFpXOVuVacgIas-EmX-rwsxoSPTSXm6mU79GLqk8GoXS9vSl1j"
+          style={{ color: "black", fontWeight: "bold" }}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          To support our growth as an early adopter, sign-up here
+        </a>
+      </header>
       <GHCorner
         href="https://github.com/dawsbot/claimable"
         size={"calc(14vw + 20px)"}
@@ -109,8 +120,7 @@ export default function Home() {
 
       <footer className={styles.footer}>
         Notice: <b>Some of these may have already been claimed</b>. This UI
-        currently shows the initial snapshots of what your account was
-        airdropped.
+        currently shows the initial snapshots.
       </footer>
     </div>
   );
