@@ -84,7 +84,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          To support our growth as an early adopter, sign-up here
+          To hear about this for free, sign-up here
         </a>
       </header>
       <GHCorner
