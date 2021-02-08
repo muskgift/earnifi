@@ -1,3 +1,4 @@
+import GHCorner from "react-github-corner";
 import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
 
@@ -75,6 +76,11 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      <GHCorner
+        href="https://github.com/dawsbot/claimable"
+        size={"calc(14vw + 20px)"}
+      />
+
       <main className={styles.main}>
         <h1 className={styles.title}>Claimable</h1>
         <p style={{ fontSize: "1.25rem", lineHeight: 1.6 }}>
