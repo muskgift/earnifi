@@ -69,7 +69,7 @@ export default function Home() {
     setAddress(value);
     setError(initialErrorValue);
     setResponseData(initialResponseData);
-    if (value.trim().length === 42) {
+    if (value.endsWith(".eth") || value.trim().length === 42) {
       setLoading(true);
       await fetch(`/api/claimable/${value}`)
         .then((res) => {
@@ -119,7 +119,7 @@ export default function Home() {
           <Label>Ethereum Address:</Label>
           <Input
             value={address}
-            placeholder="0x123... (ENS not yet supported)"
+            placeholder="0x123... or yourname.eth"
             onChange={handleAddressChange}
             disabled={loading}
           />
