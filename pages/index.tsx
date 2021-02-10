@@ -1,6 +1,6 @@
 import GHCorner from "react-github-corner";
-import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
+import useResizeObserver from "use-resize-observer";
 
 import styles from "../styles/Home.module.css";
 import styled from "styled-components";
@@ -32,7 +32,9 @@ const Error = styled.p`
 const LabelInput = styled.div`
   display: flex;
   flex-direction: column;
-  min-width: 40%;
+  width: 80%;
+  max-width: 700px;
+  margin-top: 10px;
 `;
 
 const SubscribeButton = styled.button`
@@ -42,7 +44,7 @@ const SubscribeButton = styled.button`
   background-color: lightpink;
   border-radius: 6px;
   border: 2px solid black;
-  margin-top: 20px;
+  margin-top: 30px;
   cursor: pointer;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
@@ -62,7 +64,7 @@ export default function Home() {
     logPageView();
   }, []);
 
-  const { width, height } = useWindowSize();
+  const { ref, width = 1, height = 1 } = useResizeObserver<HTMLDivElement>();
   const [address, setAddress] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(initialErrorValue);
@@ -95,28 +97,28 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={ref}>
       <header className={styles.header}>
-        Want to know when you have new money to claim? &nbsp;
         <a
           href="https://f0294d0e.sibforms.com/serve/MUIEALIgXjIm8XIXXOOoKbW5v87Rao_7T3FOViN4QRx5sD4OfrM0gBAXW8VSAX4WFJnUoCwN-1afQuZEKwxfRJzIp1PW0rxbEfU0hKJogE2YEmHqut6uoPJqSe-0NRfo35CVPzgSjX6H772gQtyuYYqo34nDsPIFpXOVuVacgIas-EmX-rwsxoSPTSXm6mU79GLqk8GoXS9vSl1j"
-          style={{ color: "black", fontWeight: "bold" }}
+          style={{ color: "black", fontWeight: "bold", zIndex: 1 }}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Sign-up for free notifications!
+          Notify me of new airdrops!
         </a>
       </header>
       <GHCorner
         href="https://github.com/dawsbot/claimable"
-        size={"calc(8vw + 30px)"}
+        size={"calc(8vw + 115px)"}
         bannerColor="lightpink"
       />
 
       <main className={styles.main}>
         <h1 className={styles.title}>Claimable</h1>
-        <p style={{ fontSize: "1.25rem", lineHeight: 1.6 }}>
-          A place to see all the free things you can claim. <br />
+        <p style={{ fontSize: "1.25rem", lineHeight: 1.6, margin: "10px" }}>
+          A place to find free things you can claim.
+          <br />
           Like airdrops and POAPs.
         </p>
         <LabelInput>
@@ -129,7 +131,7 @@ export default function Home() {
           />
         </LabelInput>
 
-        {loading && "loading..."}
+        {loading && <div style={{ marginTop: "10px" }}>loading...</div>}
         {error && <Error>{error}</Error>}
         {responseData && (
           <>
@@ -147,8 +149,22 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        Notice: <b>Some of these may have already been claimed</b>. This UI
-        currently shows the initial snapshots.
+        Say thanks by donating to{" "}
+        <a
+          href={
+            "https://etherscan.io/address/0xc0deaf6bd3f0c6574a6a625ef2f22f62a5150eab"
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            textDecoration: "underline",
+            color: "black",
+            fontWeight: "bold",
+          }}
+        >
+          dawsbot.eth (0xc0DEAF...)
+        </a>
+        Notice: Claimed items will still show
       </footer>
     </div>
   );
