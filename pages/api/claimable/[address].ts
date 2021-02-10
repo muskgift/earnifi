@@ -8,7 +8,7 @@ export default async (req: NextApiRequest, response: NextApiResponse<any>) => {
   } = (req as any) as { query: { address: string } };
 
   // ENS resolve required
-  if (address.endsWith(".eth")) {
+  if (!address.startsWith("0x")) {
     const provider = new ethers.providers.JsonRpcProvider(
       process.env.INFURA_RPC_MAINNET,
     );
