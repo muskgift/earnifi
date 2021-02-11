@@ -34,7 +34,6 @@ const LabelInput = styled.div`
   flex-direction: column;
   width: 80%;
   max-width: 700px;
-  margin-top: 10px;
 `;
 
 const SubscribeButton = styled.button`
@@ -51,6 +50,11 @@ const SubscribeButton = styled.button`
   transform: uppercase;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  transition: all 0.2s;
+  :hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
 `;
 
 const initialResponseData = null;
@@ -162,7 +166,7 @@ export default function Home() {
             fontWeight: "bold",
           }}
         >
-          dawsbot.eth (0xc0DEAF...)
+          dawsbot.eth <code style={{ fontSize: "16px" }}>(0xc0DEAF...)</code>
         </a>
         Notice: Claimed items will still show
       </footer>
