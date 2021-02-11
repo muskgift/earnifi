@@ -1,13 +1,19 @@
+import styled from "styled-components";
+import React, { useCallback, useEffect, useState } from "react";
 import GHCorner from "react-github-corner";
 import Confetti from "react-confetti";
 import useResizeObserver from "use-resize-observer";
+import Image from "next/image";
 
+import { helicopterImgSrc } from "./_app";
 import styles from "../styles/Home.module.css";
-import styled from "styled-components";
-import React, { useCallback, useEffect, useState } from "react";
 import { ClaimPretty } from "../src/components/ClaimPretty";
 import { logPageView } from "../src/analytics";
 
+const HeliCopterContainer = styled.span`
+  height: 70px;
+  width: 70px;
+`;
 const Label = styled.label`
   font-weight: bold;
   font-size: 1.1rem;
@@ -115,7 +121,15 @@ export default function Home() {
       />
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Claimable</h1>
+        <h1 className={styles.title}>
+          <HeliCopterContainer>
+            <Image src={helicopterImgSrc} layout={"fill"} />
+          </HeliCopterContainer>
+          Claimable
+          <HeliCopterContainer>
+            <Image src={helicopterImgSrc} layout={"fill"} />
+          </HeliCopterContainer>
+        </h1>
         <p style={{ fontSize: "1.25rem", lineHeight: 1.6, margin: "10px" }}>
           A place to find free things you can claim.
           <br />

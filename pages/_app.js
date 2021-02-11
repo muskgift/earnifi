@@ -5,6 +5,8 @@ const title = "Claimable | Find airdrops and POAPs";
 const description =
   "Claimable helps Ethereum users find free money. We aggregate all known airdrops and POAP tokens on one page. Enter your public address and see if you have anything waiting to claim!";
 const previewImageSrc = "https://claimable.vercel.app/images/screenshot-v0.jpg";
+export const helicopterImgSrc =
+  "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/helicopter_1f681.png";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -19,10 +21,7 @@ function MyApp({ Component, pageProps }) {
           key="og:description"
           content={description}
         />
-        <link
-          rel="icon"
-          href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/helicopter_1f681.png"
-        />
+        <link rel="icon" href={helicopterImgSrc} />
         <meta
           name="twitter:description"
           key="twitter:description"
