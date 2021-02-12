@@ -63,6 +63,8 @@ const validTlds = [".eth", ".xyz", ".ceo", ".kred", ".art", ".luxe"]; // source:
 const isValidEns = (value: String) =>
   Boolean(validTlds.find((tld) => value.endsWith(tld)));
 
+const subscribeUrl =
+  "https://f0294d0e.sibforms.com/serve/MUIEACd0hfqGVH9ZM37KR75QfYEYFP84Sg07pe3CnGlyeZzaBOsq5tfpvwBPqofgsbrR4nI1pK2Xuczph0YP1rmbjuORFqHGvzpnsMlu8dFnteo77tpK-U4XIsmBLbBCrDfQhxjS9lCbEC7TlMke7IIE_65hARMUzusRK5VPGONK302h1z9ljwNcnTs3JSOF5kpjU48jSwneWhpQ";
 export default function Home() {
   useEffect(() => {
     logPageView();
@@ -104,7 +106,7 @@ export default function Home() {
     <div className={styles.container} ref={ref}>
       <header className={styles.header}>
         <a
-          href="https://f0294d0e.sibforms.com/serve/MUIEALIgXjIm8XIXXOOoKbW5v87Rao_7T3FOViN4QRx5sD4OfrM0gBAXW8VSAX4WFJnUoCwN-1afQuZEKwxfRJzIp1PW0rxbEfU0hKJogE2YEmHqut6uoPJqSe-0NRfo35CVPzgSjX6H772gQtyuYYqo34nDsPIFpXOVuVacgIas-EmX-rwsxoSPTSXm6mU79GLqk8GoXS9vSl1j"
+          href={subscribeUrl}
           style={{ color: "black", fontWeight: "bold", zIndex: 1 }}
           target="_blank"
           rel="noopener noreferrer"
@@ -143,11 +145,7 @@ export default function Home() {
             <ClaimPretty claimables={responseData} />
           </>
         )}
-        <a
-          href="https://f0294d0e.sibforms.com/serve/MUIEALIgXjIm8XIXXOOoKbW5v87Rao_7T3FOViN4QRx5sD4OfrM0gBAXW8VSAX4WFJnUoCwN-1afQuZEKwxfRJzIp1PW0rxbEfU0hKJogE2YEmHqut6uoPJqSe-0NRfo35CVPzgSjX6H772gQtyuYYqo34nDsPIFpXOVuVacgIas-EmX-rwsxoSPTSXm6mU79GLqk8GoXS9vSl1j"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={subscribeUrl} target="_blank" rel="noopener noreferrer">
           <SubscribeButton>Tell me about new airdrops</SubscribeButton>
         </a>
       </main>
