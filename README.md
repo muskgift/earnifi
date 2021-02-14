@@ -20,16 +20,37 @@
 
 ## Want to add an airdrop or POAP?
 
-### Option 1
+There are two good ways.
 
-There are two good ways. One is to [open an issue](https://github.com/dawsbot/claimable/issues/new) and **link to the airdrop data source**. A link like this for example https://gist.githubusercontent.com/banteg/12708815fb63239d9f28dec5df8641f9/raw/28a9dffe9d5681ef5f75b0ab6c39fe5ea0064712/1inch.csv is all you need in the issue. I'll take care of the rest.
+### Option 1 - open a [GH Issue](https://github.com/dawsbot/claimable/issues/new) (slower)
+
+Provide the folowing: 
+```md
+    url:
+      "URL linking to csv of eligible addresses and amounts",
+
+    imgSrc: "URL linking to project/protocol logo",
+    claimUrl: "URL users go to in-order to claim",
+    displayName: "Token name (UNI, TORN, etc.)",
+```
+
+#### A completed example
+Issue title: "`Add Tornado cash`"
+
+```md
+    url:
+      "https://raw.githubusercontent.com/tornadocash/airdrop/master/airdrop.csv",
+
+    imgSrc: "/images/csv-claimables/torn.jpeg",
+    claimUrl: "https://app.tornado.cash/airdrop/",
+    displayName: "TORN",
+```
 
 ### Option 2
 
 1. Add the airdrop data source to the claimable lists.
 
-- If the source data is csv, add the file to the [csv-claimables](src/csv-claimables.ts).
-- If the source data is json, add the file to the [json-claimables](src/json-claimables.ts).
+- Add the required data to [csv-claimables](src/csv-claimables.ts) (everything in option 1 above).
 
 2. Run `npm run build:claimable-data` (also ran on commit automatically in-case you forget)
 3. Verify this created a new source file in `src/claimable-data/*` and that the master address data looks correct in `src/claimable-data/master-airdrop-data.json`
@@ -38,8 +59,16 @@ There are two good ways. One is to [open an issue](https://github.com/dawsbot/cl
 
 ## Web App Development
 
+1.
 ```bash
-npm i && npm run dev
+npm install
+```
+
+2. Copy `.env.sample` to `.env` and replace with required variables
+
+3.
+```bash
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
