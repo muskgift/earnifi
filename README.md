@@ -24,7 +24,8 @@ There are two good ways.
 
 ### Option 1 - open a [GH Issue](https://github.com/dawsbot/claimable/issues/new) (slower)
 
-Provide the folowing: 
+Provide the folowing:
+
 ```md
     url:
       "URL linking to csv of eligible addresses and amounts",
@@ -35,13 +36,15 @@ Provide the folowing:
 ```
 
 #### A completed example
+
 Issue title: "`Add Tornado cash`"
 
 ```md
     url:
       "https://raw.githubusercontent.com/tornadocash/airdrop/master/airdrop.csv",
 
-    imgSrc: "/images/csv-claimables/torn.jpeg",
+    # Github org images work well here
+    imgSrc: "https://avatars.githubusercontent.com/u/58548030?s=200&v=4",
     claimUrl: "https://app.tornado.cash/airdrop/",
     displayName: "TORN",
 ```
@@ -52,7 +55,7 @@ Issue title: "`Add Tornado cash`"
 
 - Add the required data to [csv-claimables](src/csv-claimables.ts) (everything in option 1 above).
 
-2. Run `npm run build:claimable-data` (also ran on commit automatically in-case you forget)
+2. Run `npm run build:claimable-data`
 3. Verify this created a new source file in `src/claimable-data/*` and that the master address data looks correct in `src/claimable-data/master-airdrop-data.json`
 
 <br/>
@@ -60,6 +63,7 @@ Issue title: "`Add Tornado cash`"
 ## Web App Development
 
 1.
+
 ```bash
 npm install
 ```
@@ -67,6 +71,7 @@ npm install
 2. Copy `.env.sample` to `.env` and replace with required variables
 
 3.
+
 ```bash
 npm run dev
 ```

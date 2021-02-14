@@ -1,10 +1,17 @@
 import GHCorner from "react-github-corner";
 import Confetti from "react-confetti";
 import useResizeObserver from "use-resize-observer";
-
-import styles from "../styles/Home.module.css";
+import Image from "next/image";
 import styled from "styled-components";
 import React, { useCallback, useEffect, useState } from "react";
+
+const TwitterLogo = styled.a`
+  position: absolute;
+  bottom: 22px;
+  right: 36px;
+  cursor: pointer;
+`;
+import styles from "../styles/Home.module.css";
 import { ClaimPretty } from "../src/components/ClaimPretty";
 import { logPageView } from "../src/analytics";
 
@@ -167,6 +174,13 @@ export default function Home() {
           dawsbot.eth <code style={{ fontSize: "16px" }}>(0xc0DEAF...)</code>
         </a>
         Notice: Claimed items will still show
+        <TwitterLogo
+          href="https://twitter.com/dawsonbotsford"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image width={"46"} height={"46"} src="/images/twitter-square.svg" />
+        </TwitterLogo>
       </footer>
     </div>
   );
