@@ -6,8 +6,8 @@ const sampleEnvFilePath = path.join(__dirname, "../.env.sample");
 const dotenv = require("dotenv");
 
 const schema = Joi.object({
-  GA_TRACKING_ID: Joi.string().required(),
   INFURA_RPC_MAINNET: Joi.string().required(),
+  GA_TRACKING_ID: Joi.string().optional(),
 });
 
 // validate production env
